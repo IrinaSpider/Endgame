@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		html{
+			height: 100% !important;
+			width: 100%;
+		}
+		body{
+			height: 100% !important;
+			width: 100%
+		}
+	</style>
+</head>
+<body>
+		<div class="none" style="height: 100%">
+			<div style="background-image: url(dmc.png); background-size: 100% 100%; height: 100%; width: 100%">
+
+				<h1 class="score ml-5" >0</h1>
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 20%; margin-top: 19%; ">
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 60%; margin-top: 16%; ">
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 70%; margin-top: 20%; ">
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 10%; margin-top: 12%; ">
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 40%; margin-top: 13%; ">
+				<img class="enemy1" src="Dante.png" alt="" style="position: absolute; width: 6%; margin-left: 80%; margin-top: 8%; ">
+
+				<img class="enemy3" src="Vergil.png" alt="" style="position: absolute; width: 10%; margin-left: 0%; margin-top: 20%; ">
+				<img class="enemy3" src="Vergil.png" alt="" style="position: absolute; width: 10%; margin-left: 25%; margin-top: 10%; ">
+				<img class="enemy3" src="Vergil.png" alt="" style="position: absolute; width: 10%; margin-left: 50%; margin-top: 24%; ">
+				<img class="enemy3" src="Vergil.png" alt="" style="position: absolute; width: 10%; margin-left: 70%; margin-top: 5%; ">
+				<img class="enemy3" src="Vergil.png" alt="" style="position: absolute; width: 10%; margin-left: 90%; margin-top: 20%; ">
+				
+				<img class="Vitale" style="height: 30px; width: 30px; left: 1200px; position: absolute;" src="Trost.png" alt="">
+				<img class="Vitale" style="height: 30px; width: 30px; right: 700px; bottom: 500px; position: absolute;" src="Trost.png" alt="">
+				<img class="Vitale" style="height: 30px; width: 30px; left: 100px; bottom: 200px; position: absolute;" src="Trost.png" alt="">
+
+				<img class="Yamato" style="height: 20px; width: 20px; right: 500px; position: absolute; top: 700px;" src="Yamato.png" alt="">
+				<img class="Yamato" style="height: 20px; width: 20px; position: absolute; left: 1000px; top: 200px;" src="Yamato.png" alt="">
+				<img class="Yamato" style="height: 20px; width: 20px; position: absolute; top: 400px;" src="Yamato.png" alt="">
+
+				<img src="Sparda.png" class="Sparda" style="height: 50px; position: absolute; top: 500px;" alt="">
+			</div>
+		</div>
+		<div style="display: none; height: 100%" class="new">
+				<div style="background-image: url(pewds.png); background-size: 100% 100%; height: 100%">
+					<h1 style="color: red;">Find 5 objects</h1>
+					<h1 class="ochki ml-5">0</h1>
+
+					<img src="edgar.png" class="edgar" alt="" style="height: 250px; width: 150px; position: absolute; left: 340px; top: 250px;">
+
+					<img src="mine.png" class="mine" style="height: 30px; width: 20px; left: 70px; position: absolute; top: 120px;">
+
+					<img src="pew.png" class="russia" style="height: 100px; position: absolute; margin-top: 260px; margin-left: 900px;">
+					<img src="pew.png" class="russia" style="height: 100px; position: absolute; margin-top: 270px; margin-left: 1010px;" alt="">
+
+					<img src="T.png" class="india" style="height: 250px; width: 150px; margin-top: 140px; margin-left: 625px;" alt="">
+				</div>
+		</div>
+		<div style="display: none; height: 100%" class="extraNew">
+				<div style="background-image: url(AVE.png); background-size: 100% 100%; height: 100%">
+					<h1>Собери все камни бесконечности</h1>
+					<h1 class="num ml-5" >0</h1>
+
+					<img src="1.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+					<img src="2.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+					<img src="3.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+					<img src="7.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+					<img src="5.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+					<img src="6.png" class="stone" style="height: 50px; width: 50px; position: absolute;">
+				</div>
+		</div>
+		<div style="display: none" class="BigBang">
+			<h1 class="Super"></h1>
+			<img src="1.webp" alt="" style="margin-left: 45%; margin-top:20%">
+		</div>
+	<script>
+		let score = 0 
+		let num = 0
+		let pum = 0
+		let All = 0
+		let Sup = 0
+		//здесь должно быть создание и вызов функции, также if()
+		let enemy1 = document.querySelectorAll(".enemy1");
+		let enemy3 = document.querySelectorAll(".enemy3");
+		let ochki = document.querySelector('.score');
+		let Vitale = document.querySelectorAll(".Vitale");
+		let Yamato = document.querySelectorAll(".Yamato");
+		let Sparda = document.querySelector('.Sparda');
+		let Stop = document.querySelector('.none');
+		
+		let New = document.querySelector('.new');
+		let och = document.querySelector('.ochki');
+		let Edgar = document.querySelector('.edgar');
+		let Mine = document.querySelector('.mine');
+		let Russia = document.querySelectorAll(".russia");
+		let India = document.querySelector('.india');
+
+		let Avengers = document.querySelector('.extraNew');
+		let Stone = document.querySelectorAll(".stone");
+		let Pum = document.querySelector('.num');
+
+		let End = document.querySelector('.all');
+		let TheEnd = document.querySelector('.BigBang')
+		let Super = document.querySelector('.Super')
+
+
+		let fun = function(){
+
+			let index = Math.round(Math.random()*6);
+			let inde = Math.round(Math.random()*500)
+			
+			Stone[index].style.display = "block"
+			Stone[index].style.marginLeft = inde+"px"
+			Stone[index].style.marginTop = inde+"px"
+
+			setTimeout(function(){
+				Stone[index].style.display = "none";
+			},1000)
+
+		}
+		setInterval(fun,900);
+
+
+		let func = function(arg){
+			score = score + arg
+			ochki.innerHTML = score
+		}
+
+		let funci = function(arg){
+			num = num + arg
+			och.innerHTML = num
+		}
+
+		let funcit = function(arg){
+			pum = pum +arg
+			Pum.innerHTML = pum
+		}
+
+		let funi = function(arg){
+			Sup=score + pum + num +arg
+			Super.innerHTML = Sup
+		}
+
+		for(let i=0;i<6;i++){
+			enemy1[i].onclick = function(){
+				enemy1[i].style.display = "none"
+				func(-40)
+			}
+		}
+	
+			Sparda.onclick = function(){
+			Sparda.style.display = "none"
+				func(1000)
+			}
+		
+
+		for(let i=0;i<3;i++){
+			Yamato[i].onclick = function(){
+				Yamato[i].style.display = "none"
+				func(-1000)
+			}
+		}
+
+		for(let i=0; i<3; i++){
+			Vitale[i].onclick = function(){
+			Vitale[i].style.display = "none"
+				func(100)
+			}
+		}
+
+		for(let i=0;i<5;i++){
+			enemy3[i].onclick = function(){
+				enemy3[i].style.display = "none"
+				func(30)
+			}
+		}
+
+
+		Edgar.onclick = function(){
+			Edgar.style.display = "none"
+			funci(10)
+		}
+		India.onclick = function(){
+			India.style.display = "none"
+			funci(10)
+		}
+		Mine.onclick = function(){
+			Mine.style.display = "none"
+			funci(10)
+		}
+		for(let i=0;i<2;i++){
+			Russia[i].onclick = function(){
+				Russia[i].style.display = "none"
+				funci(10)
+			}
+		}
+
+		for(let i=0;i<6;i++){
+			Stone[i].onclick = function(){
+				Stone[i].style.display = "none"
+				funcit(100)
+			}
+		}
+
+		let time = function(){
+			for(let i=0;i<6;i++){
+				enemy1[i].style.display = "none"
+			}
+
+			for(let i=0;i<5;i++){
+				enemy3[i].style.display = "none"
+			}
+
+			for(let i=0;i<3;i++){
+				Yamato[i].style.display = "none"
+			}
+
+			Sparda.style.display = "none"
+
+			for(let i=0; i<3; i++){
+				Vitale[i].style.display = "none"
+			}
+
+			Stop.style.display = "none"
+
+			New.style.display = "block"
+
+			if(score>=100){
+				alert("You win");
+			}else{
+				alert("You lose");
+			}
+		}
+
+		setTimeout(time,4000)
+
+		let tume = function(){
+			for(let i=0;i<2;i++){
+				Russia[i].style.display = "none"
+			}
+
+			Edgar.style.display = "none"
+
+			India.style.display = "none"
+	
+			Mine.style.display = "none"
+
+			New.style.display = "none"
+			
+			Avengers.style.display = "block"
+
+			if(num==50){
+				alert("You win");
+			}else{
+				alert("You lose");
+			}
+		}
+
+		setTimeout(tume,10000)
+
+		let tine = function(){
+			for(let i=0;i<6;i++){
+				Stone[i].style.display = "none"
+			}
+
+		Avengers.style.display = "none"
+
+		TheEnd.style.display = "block"
+
+			if(pum>=600){
+				alert("You win");
+			}else{
+				alert("You lose");
+			}
+		}
+
+		setTimeout(tine,15000)
+
+		let ti = function(){
+			if(funi==1000){
+				alert("You cool")
+			}else{
+				alert("Oh no")
+			}
+		}
+		setTimeout(ti,17000)
+	</script>
+</body>
+</html>
